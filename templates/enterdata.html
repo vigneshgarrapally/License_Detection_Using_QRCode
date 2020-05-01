@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 16px;
+    background-color: white;
+}
+input[type=text], input[type=password] ,input[type=file]:focus{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus ,input[type=file]:focus{
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+a {
+    color: dodgerblue;
+}
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+form {
+margin: 0 auto;
+width:400px;
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+
+</head>
+<body>
+<div class="ui menu">
+
+  <a class="item" href="{{url_for('enterdata')}}">Registration</a>
+    <a class="item" href="{{url_for('licences')}}">View List</a>
+  <div class="right menu">
+    <a class="item" href="{{url_for('login')}}">Logout</a>
+  </div>
+</div>
+<div style="w"><form action="{{url_for('enter')}}" method="post" enctype = "multipart/form-data">>
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to apply for Driving License</p>
+      <br>
+      <p>*All fields are mandatory</p>
+    <hr>
+
+    <label ><b>Name</b></label>
+    <input type="text" placeholder="Enter Your full Name" name="name" required>
+
+    <label ><b>Father Name</b></label>
+    <input type="text" placeholder="Enter Father Name" name="fname" required>
+
+      <label ><b>Date-Of-Birth</b></label>
+    <input type="text" placeholder="YYYY-MM-DD" name="dob" required>
+
+      <label ><b>house No</b></label>
+    <input type="text" placeholder="Enter House no" name="hno" required>
+
+      <label ><b>Street</b></label>
+    <input type="text" placeholder="Enter Street Name" name="colony" required>
+
+      <label ><b>Landmark</b></label>
+    <input type="text" placeholder="Enter Landmark" name="location" required>
+
+      <label ><b>Mandal</b></label>
+    <input type="text" placeholder="Enter Mandal" name="mandal" required>
+
+      <label ><b>District</b></label>
+    <input type="text" placeholder="Enter District" name="dist" required>
+
+      <label ><b>Pin code</b></label>
+    <input type="text" placeholder="Enter pin code" name="pin" required>
+
+      <label ><b>RTA zone</b></label>
+    <input type="text" placeholder="Enter RTA" name="rta" required>
+
+
+
+       <label ><b>Reference Number</b></label>
+    <input type="text" placeholder="Enter Reference Number" name="ref" required>
+
+       <label ><b>Vehcile Type</b></label>
+    <input type="text" placeholder="Enter Vehcile Type" name="vtype" required>
+
+        <label ><b>Badge</b></label>
+    <input type="text" placeholder="Enter Badge" name="badge" required>
+
+
+       <label ><b>Blood Group</b></label>
+    <input type="text" placeholder="Enter Blood Group" name="blood" required>
+
+      <label ><b>Pass Photo</b></label>
+      <br>
+    <input type="file"  name="photo" required>
+<br><br>
+        <label ><b>Applicant Sign</b></label>
+      <br>
+    <input type="file"  name="usersign" required>
+      <br><br>
+        <label ><b>Authority Sign</b></label>
+      <br>
+    <input type="file"  name="authoritysign" required>
+
+
+    <hr>
+    <p>By clicking on register you ensure that all details provided are accurate </p>
+
+    <button type="submit" class="registerbtn">Register</button>
+      <div>{{m2}}</div>
+  </div>
+</form></div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #center
+        {
+    text-align:center;
+    width:70%;
+    margin-left:200px;
+    margin-right:250px;
+  }
+    </style>
+    <meta charset="UTF-8">
+    <title>Licenses</title>
+</head>
+<body>
+
+<div class="ui menu">
+
+  <a class="item" href="{{url_for('enterdata')}}">Registration</a>
+    <a class="item" href="{{url_for('licences')}}">View List</a>
+  <div class="right menu">
+    <a class="item" href="{{url_for('login')}}">Logout</a>
+  </div>
+</div>
+<center><h1><b>USER LIST</b></h1></center>
+<div >
+<table class="ui celled table" id="center">
+  <thead>
+    <tr><th>Applicants Name</th>
+    <th>Fathers Name</th>
+    <th>Date Of Birth</th>
+    <th>Location</th>
+    <th>Qr code</th>
+        <th>License</th>
+  </tr></thead>
+  <tbody>
+  {% for i in range(0,num): %}
+    <tr>
+      <td>{{userdata[i][1]}}</td>
+      <td>{{userdata[i][2]}}</td>
+      <td>{{userdata[i][3]}}</td>
+        <td>{{userdata[i][6]}}</td>
+        <td>
+            <form action="{{url_for('qrcodeshow')}}" method="POST">
+                <input type="hidden" name="id" value="{{userdata[i][0]}}">
+                <button class="ui primary basic button" >View QR</button>
+            </form>
+
+        </td>
+        <td>
+            <form action="{{url_for('licence')}}" method="GET">
+                <input type="hidden" name="id" value="{{userdata[i][0]}}">
+                <button class="ui primary basic button" >View License</button>
+            </form>
+
+        </td>
+    </tr>
+  {%    endfor   %}
+  </tbody>
+</table>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</html>

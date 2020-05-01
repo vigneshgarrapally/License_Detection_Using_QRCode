@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>License</title>
+</head>
+<body>
+<div class="ui menu">
+
+  <a class="item" href="{{url_for('enterdata')}}">Registration</a>
+    <a class="item" href="{{url_for('licences')}}">View List</a>
+  <div class="right menu">
+    <a class="item" href="{{url_for('login')}}">Logout</a>
+  </div>
+</div>
+<div>
+    <h1>You should see license of {{userdata[1]}}</h1>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</html>
