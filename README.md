@@ -4,7 +4,8 @@ ___
 __About:__
 
 
-    My first Flask Project in my Engineering. This project is a prototype to avoid fake licenses by Using QR on License Plate as a layer of Security. 
+My first Flask Project in my Engineering. This project is a prototype to avoid fake licenses by Using QR on License Plate as a layer of Security. 
+
 
 __Technologies Used:__
 
